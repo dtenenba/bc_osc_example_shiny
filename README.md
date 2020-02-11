@@ -51,3 +51,18 @@ Again, you do not need to restart the app as it isn't a Passenger app.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## CHPC's notes
+
+### Function overview
+
+* Uses CHPC's R (3.6.1) which has shiny installed
+* To run a webserver, use an openresty container running nginx
+* The script.sh that launches the OOD app creates a nginx config file and Shiny app launcher, then runs R with the launcher, followed by looking for the Unix socket created by the R's Shiny, thich then gets used by the nginx startup
+* The user shiny app path is specified in the job specs' input box
+
+Note that Shiny app can be also launched from the OOD's RStudio app by typing
+library('shiny')
+runApp("newdir") - where "newdir" is the directory where app.R resides
+
+

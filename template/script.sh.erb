@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
+export app_path_source=<%= context.shiny_app.gsub /\r\n?/, "\n" %>
+
 <%-
   # Helper
   cache_root = Pathname.new("${CACHE_DIR}")
 
   # Configure R
   r_script = session.staged_root.join("launcher.R")
-  r_env    = "module load intel/16.0.3 R/3.4.2"
+  r_env    = "module load R"
   r_cmd    = "R"
 
   # Configure Shiny
-  app_path = session.staged_root.join("app")
+#  app_path = session.staged_root.join("${app_path_source}")
+  app_path = "${app_path_source}"
   app_sock = cache_root.join("app.sock")
 
   # Configure NGINX
@@ -22,7 +25,7 @@
       -B "#{nginx_conf}:/usr/local/openresty/nginx/conf/nginx.conf" \
       -B "#{nginx_cache}" \
       -B "#{app_sock.dirname}" \
-      ~jnicklas/ttt/resty.simg
+      /uufs/chpc.utah.edu/sys/installdir/openresty/alpine_resty.simg
   EOS
 -%>
 
