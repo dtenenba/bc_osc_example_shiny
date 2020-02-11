@@ -54,7 +54,7 @@ Again, you do not need to restart the app as it isn't a Passenger app.
 
 ## CHPC's notes
 
-### Function overview
+### Functional overview
 
 * Uses CHPC's R (3.6.1) which has shiny installed
 * To run a webserver, use an openresty container running nginx

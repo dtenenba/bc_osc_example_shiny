@@ -1,5 +1,5 @@
 ---
-title: "Shiny app on Notchpeak"
+title: "R Shiny app on Notchpeak"
 cluster: "notchpeak"
 description: |
   This app will launch a R Shiny app from the path listed. The app will be using CHPC default R.
