@@ -65,4 +65,9 @@ Note that Shiny app can be also launched from the OOD's RStudio app by typing
 library('shiny')
 runApp("newdir") - where "newdir" is the directory where app.R resides
 
+### Application's dependencies
+
+R libraries that are needed by the application need to either be installed centrally to CHPC's R libraries location, or to other shared directory location. The former approach risks potential version conflicts with other library dependencies (this is more of an issue in Python but is possible in R as well).
+
+Best practice may be for the creator of the app to install all the dependencies to his/her home directory, and in the app modify the R library path (using the .libPaths function) to add this directory to it.
 
