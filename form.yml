@@ -28,7 +28,7 @@ attributes:
     label: "Shiny app to run"
     help: "Enter the path to the Shiny app you want to run. App file in this directory has to be named either app.R or server.R."
     value: |
-        ~/R/shiny/app
+        /home/ubuntu/ondemand/dev/bc_osc_example_shiny/template/app
 form:
   - shiny_app
   - num_cores
