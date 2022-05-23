@@ -1,6 +1,6 @@
 ---
-title: "R Shiny app on Notchpeak"
-cluster: "notchpeak"
+title: "R Shiny app on CLUSTER_NAME_PLACEHOLDER"
+cluster: "CLUSTER_NAME_PLACEHOLDER"
 description: |
   This app will launch a R Shiny app from the path listed. The app will be using CHPC default R.
 attributes:
@@ -18,11 +18,11 @@ attributes:
     max: 336
     help: "Maximum wall time on notchpeak-shared-short is 8 hours, on notchpeak and owner-guest 72 hours, on owner nodes 14 days."
   bc_account:
-    label: "Account"
-    value: "notchpeak-shared-short"
+    # label: "Account"
+    # value: "notchpeak-shared-short"
   bc_queue:
     label: "Partition"
-    value: "notchpeak-shared-short"
+    value: "queue1"
   shiny_app:
     widget: text_area
     label: "Shiny app to run"

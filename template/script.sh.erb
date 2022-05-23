@@ -8,7 +8,8 @@ export app_path_source=<%= context.shiny_app.gsub /\r\n?/, "\n" %>
 
   # Configure R
   r_script = session.staged_root.join("launcher.R")
-  r_env    = "module load R"
+  #r_env    = "module load R"
+  r_env    = ""
   r_cmd    = "R"
 
   # Configure Shiny
@@ -19,7 +20,8 @@ export app_path_source=<%= context.shiny_app.gsub /\r\n?/, "\n" %>
   # Configure NGINX
   nginx_conf  = session.staged_root.join("nginx.conf")
   nginx_cache = cache_root.join("nginx")
-  nginx_env   = "module load singularity"
+  # nginx_env   = "module load singularity"
+  nginx_env   = ""
   nginx_cmd   = <<-EOS.gsub(/^ {4}/, "")
     singularity run \
       -B "#{nginx_conf}:/usr/local/openresty/nginx/conf/nginx.conf" \
@@ -122,7 +124,7 @@ umask 077
 <%= r_env %>
 
 # Output debug info
-module list
+# module list
 
 # Launch Shiny App
 set -x
@@ -154,7 +156,7 @@ done
 <%= nginx_env %>
 
 # Output debug info
-module list
+# module list
 
 # Launch NGINX server
 set -x
