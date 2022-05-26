@@ -1,6 +1,6 @@
 ---
-title: "R Shiny app on CLUSTER_NAME_PLACEHOLDER"
-cluster: "CLUSTER_NAME_PLACEHOLDER"
+title: "R Shiny app on cluster"
+cluster: "cluster"
 description: |
   This app will launch a R Shiny app from the path listed. The app will be using CHPC default R.
 attributes:
