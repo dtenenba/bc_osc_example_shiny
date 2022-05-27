@@ -22,7 +22,7 @@ attributes:
     # value: "notchpeak-shared-short"
   bc_queue:
     label: "Partition"
-    value: "queue1"
+    value: ""
   shiny_app:
     widget: text_area
     label: "Shiny app to run"
