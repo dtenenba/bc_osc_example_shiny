@@ -27,7 +27,7 @@ export app_path_source=<%= context.shiny_app.gsub /\r\n?/, "\n" %>
       -B "#{nginx_conf}:/usr/local/openresty/nginx/conf/nginx.conf" \
       -B "#{nginx_cache}" \
       -B "#{app_sock.dirname}" \
-      /apps/openresty_alpine-amd64.sif
+      /apps/openresty-with-session.sif
   EOS
 -%>
 
